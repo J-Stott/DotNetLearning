@@ -16,6 +16,7 @@ using API.Data;
 using API.Interfaces;
 using API.Services;
 using API.Extensions;
+using API.Middleware;
 
 namespace API
 {
@@ -46,10 +47,11 @@ namespace API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 
