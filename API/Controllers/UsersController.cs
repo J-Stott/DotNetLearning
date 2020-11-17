@@ -33,7 +33,7 @@ namespace API.Controllers
             return Ok(await _userRepository.GetMembersAsync());
         }
 
-        //specifies route parameter - api/users/{id}
+        //specifies route parameter - api/users/{username}
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {

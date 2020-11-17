@@ -22,11 +22,10 @@ const routes: Routes = [
     children: [
       {
         path: "members", 
-        component: MemberListComponent,
-        canActivate: [AuthGuard]
+        component: MemberListComponent
       },
       {
-        path: "members/:id", 
+        path: "members/:username", 
         component: MemberDetailComponent,
       },
       {
